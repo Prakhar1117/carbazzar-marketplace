@@ -1,0 +1,73 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface": "#fff8f6",
+        "primary-container": "#f6f5e1",
+        "on-background": "#3b0901",
+        "on-tertiary-container": "#876951",
+        "surface-container-low": "#fff0ed",
+        "on-primary": "#ffffff",
+        "surface-container-lowest": "#ffffff",
+        "secondary": "#7d5450",
+        "on-error-container": "#93000a",
+        "error": "#ba1a1a",
+        "on-primary-fixed-variant": "#474839",
+        "tertiary": "#755941",
+        "tertiary-fixed-dim": "#e4c0a3",
+        "secondary-container": "#ffc7c2",
+        "error-container": "#ffdad6",
+        "surface-container-highest": "#ffdad2",
+        "surface-bright": "#fff8f6",
+        "on-secondary": "#ffffff",
+        "on-primary-fixed": "#1b1c11",
+        "surface-tint": "#5f5f50",
+        "on-surface": "#3b0901",
+        "on-secondary-fixed-variant": "#633d39",
+        "inverse-surface": "#581d10",
+        "surface-container-high": "#ffe2dc",
+        "on-tertiary": "#ffffff",
+        "on-surface-variant": "#47473f",
+        "primary": "#5f5f50",
+        "on-secondary-container": "#7a514d",
+        "secondary-fixed-dim": "#efbab5",
+        "on-tertiary-fixed-variant": "#5b422c",
+        "on-tertiary-fixed": "#2a1705",
+        "primary-fixed": "#e4e3d0",
+        "primary-fixed-dim": "#c8c8b5",
+        "tertiary-container": "#fff1e8",
+        "surface-dim": "#ffcfc5",
+        "outline-variant": "#c8c7bc",
+        "inverse-on-surface": "#ffede9",
+        "tertiary-fixed": "#ffdcc1",
+        "on-secondary-fixed": "#301311",
+        "on-primary-container": "#707060",
+        "secondary-fixed": "#ffdad6",
+        "background": "#fff8f6",
+        "surface-variant": "#ffdad2",
+        "surface-container": "#ffe9e5",
+        "outline": "#78776e",
+        "on-error": "#ffffff",
+        "inverse-primary": "#c8c8b5"
+      },
+      borderRadius: {
+        "DEFAULT": "1rem",
+        "lg": "2rem",
+        "xl": "3rem",
+        "full": "9999px"
+      },
+      fontFamily: {
+        "headline": ["Public Sans"],
+        "body": ["Public Sans"],
+        "label": ["Public Sans"]
+      }
+    },
+  },
+  plugins: [],
+}

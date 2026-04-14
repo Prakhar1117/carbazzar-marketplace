@@ -1,0 +1,232 @@
+.car-detail-page {
+  padding: 40px 32px 80px;
+}
+
+.center-msg {
+  padding: 100px 0;
+  text-align: center;
+}
+
+/* Stitched padded image style */
+.detail-hero-box {
+  background-color: var(--border-color); /* Light grey padded box from Stitch */
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  min-height: 50vh;
+}
+
+.hero-img-inner {
+  width: 100%;
+  max-width: 900px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.car-main-img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.detail-layout {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.detail-main {
+  flex: 1;
+}
+
+/* Typography matching Stitch */
+.detail-header-block {
+  margin-bottom: 48px;
+}
+
+.stock-tag {
+  display: inline-block;
+  background-color: var(--text-main);
+  color: white;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+}
+
+.title-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 12px;
+}
+
+.detail-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.1;
+  max-width: 60%;
+}
+
+.price-value {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.detail-subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.stitch-subheading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.detail-section {
+  margin-bottom: 48px;
+}
+
+/* Open borderless list for Specs */
+.specs-list {
+  display: flex;
+  gap: 60px;
+}
+
+.spec-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.spec-pair {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+}
+
+.spec-lbl {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.spec-val {
+  font-weight: 600;
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+/* Seller Desc Stictch Box */
+.seller-desc-stitch {
+  background-color: var(--secondary-color);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+}
+
+.desc-text-stitch {
+  color: var(--text-main);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Sidebar */
+.detail-sidebar {
+  width: 320px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 100px;
+}
+
+.action-buttons-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.action-btn {
+  width: 100%;
+}
+
+.stitch-seller-card {
+  padding: 24px;
+  border-radius: var(--radius-xl);
+}
+
+.seller-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.seller-avatar {
+  width: 48px;
+  height: 48px;
+  background-color: var(--bg-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.seller-info h4 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.verify-tag {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.call-btn-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.call-btn-circle:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.seller-address {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 1000px) {
+  .detail-layout { flex-direction: column; }
+  .detail-sidebar { width: 100%; position: relative; top: 0; }
+  .specs-list { flex-direction: column; gap: 24px; }
+  .title-price-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .detail-hero-box { padding: 20px; min-height: 30vh; }
+}
