@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // Database Connection
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/carbazzar_db';
+const MONGODB_URI = process.env.MONGODB_URI || process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/carbazzar_db';
 mongoose.connect(MONGODB_URI)
   .then(() => console.log('Connected to MongoDB Compass locally'))
   .catch(err => console.error('Could not connect to MongoDB:', err));
