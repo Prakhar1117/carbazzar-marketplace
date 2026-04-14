@@ -6,8 +6,19 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const fd = new FormData(e.target);
+    const firstName = fd.get('firstName');
+    const lastName = fd.get('lastName');
+    const email = fd.get('email');
+    const inquiry = fd.get('inquiry');
+    const message = fd.get('message');
+    
+    // Open default email client
+    window.location.href = `mailto:b241198@skit.ac.in?subject=${encodeURIComponent(inquiry)} - ${encodeURIComponent(firstName)} ${encodeURIComponent(lastName)}&body=${encodeURIComponent(message + '\n\nFrom: ' + email)}`;
+    
     setSent(true);
     setTimeout(() => setSent(false), 3000);
+    e.target.reset();
   };
 
   return (
@@ -68,30 +79,30 @@ const Contact = () => {
             {sent ? (
               <div className="bg-primary-container text-on-primary-container p-6 rounded-lg text-center">
                 <span className="material-symbols-outlined text-4xl mb-2 text-primary">check_circle</span>
-                <h4 className="font-bold text-lg">Message Sent!</h4>
-                <p>One of our concierge team members will be in touch shortly.</p>
+                <h4 className="font-bold text-lg">Message Prepared!</h4>
+                <p>Your email client should have opened to send the message.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
                     <label className="text-sm font-bold uppercase tracking-wider text-on-surface-variant">First Name</label>
-                    <input required type="text" className="bg-surface-container-low border-none rounded p-3 focus:ring-2 focus:ring-primary text-on-surface" />
+                    <input required type="text" name="firstName" className="bg-surface-container-low border-none rounded p-3 focus:ring-2 focus:ring-primary text-on-surface" />
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-sm font-bold uppercase tracking-wider text-on-surface-variant">Last Name</label>
-                    <input required type="text" className="bg-surface-container-low border-none rounded p-3 focus:ring-2 focus:ring-primary text-on-surface" />
+                    <input required type="text" name="lastName" className="bg-surface-container-low border-none rounded p-3 focus:ring-2 focus:ring-primary text-on-surface" />
                   </div>
                 </div>
                 
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-bold uppercase tracking-wider text-on-surface-variant">Email Address</label>
-                  <input required type="email" className="bg-surface-container-low border-none rounded p-3 focus:ring-2 focus:ring-primary text-on-surface" />
+                  <input required type="email" name="email" className="bg-surface-container-low border-none rounded p-3 focus:ring-2 focus:ring-primary text-on-surface" />
                 </div>
                 
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-bold uppercase tracking-wider text-on-surface-variant">Inquiry Type</label>
-                  <select className="bg-surface-container-low border-none rounded p-3 focus:ring-2 focus:ring-primary text-on-surface">
+                  <select name="inquiry" className="bg-surface-container-low border-none rounded p-3 focus:ring-2 focus:ring-primary text-on-surface">
                     <option>General Inquiry</option>
                     <option>Vehicle Sales</option>
                     <option>Trade-In Valuation</option>
@@ -101,7 +112,7 @@ const Contact = () => {
 
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-bold uppercase tracking-wider text-on-surface-variant">Message</label>
-                  <textarea required rows="5" className="bg-surface-container-low border-none rounded p-3 focus:ring-2 focus:ring-primary text-on-surface"></textarea>
+                  <textarea required name="message" rows="5" className="bg-surface-container-low border-none rounded p-3 focus:ring-2 focus:ring-primary text-on-surface"></textarea>
                 </div>
 
                 <button type="submit" className="w-full bg-primary text-on-primary py-4 rounded font-bold text-lg hover:opacity-90 transition-opacity">

@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider, useAuth } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -12,6 +12,12 @@ import Dashboard from './pages/Dashboard';
 import About from './pages/About';
 import Contact from './pages/Contact';
 
+const PrivateRoute = ({ children }) => {
+  const { user, loading } = useAuth();
+  if (loading) return <div>Loading...</div>;
+  return user ? children : <Navigate to="/login" replace />;
+};
+
 function App() {
   return (
     <AuthProvider>
@@ -20,7 +26,9 @@ function App() {
           <Navbar />
           <main className="main-content">
             <Routes>
-              <Route path="/" element={<Home />} />
+              {/* Force login on Home if unauthenticated */}
+              <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
+              
               <Route path="/browse" element={<Browse />} />
               <Route path="/car/:id" element={<CarDetail />} />
               <Route path="/sell" element={<SellCar />} />

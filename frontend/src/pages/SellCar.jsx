@@ -96,8 +96,8 @@ const SellCar = () => {
                     <input type="number" name="year" required min="1900" max={new Date().getFullYear()} value={formData.year} onChange={handleChange} className="form-input" />
                   </div>
                   <div className="flex-1">
-                    <label className="form-label">Listing Price ($)</label>
-                    <input type="number" name="price" required min="0" value={formData.price} onChange={handleChange} className="form-input" placeholder="Price" />
+                    <label className="form-label" style={{color: '#ff6600', fontWeight: 'bold'}}>Listing Price ($) *</label>
+                    <input type="number" name="price" required min="1" value={formData.price} onChange={handleChange} className="form-input" placeholder="Enter vehicle price" style={{fontSize: '1.1rem'}} />
                   </div>
                 </div>
                 <button type="button" className="btn btn-primary proceed-btn" onClick={nextStep} disabled={!formData.brand || !formData.model || !formData.price}>Proceed</button>
